@@ -11,6 +11,13 @@ for value in range(max_page):
     html = response.read()
     # html = html.decode("html.parser")
     bs = BeautifulSoup(html, 'lxml')
-    print(bs.find_all(class_="c_list"))
-    for link in bs.find_all(class_="c_list"):
-        print(link.get_text(),link.a['href'])
+    def has_class_but_no_id(tag):
+        return not tag.has_attr(class_ = "c_tit") and tag.has_attr('href')
+    print(bs.find_all(has_class_but_no_id))
+    # print(bs.find_all(class_="c_list"))
+    # for link in bs.find_all(class_="c_list"):
+    #     print(link.get_text(),link.a['href'])
+
+
+
+
