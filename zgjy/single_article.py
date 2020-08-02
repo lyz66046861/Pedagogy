@@ -9,7 +9,7 @@ bs = BeautifulSoup(html, 'lxml')
 # print(bs.find_all(class_="jxbox clearfix"))
 # soup.find_all(attrs={'name':'elements'})//查询name为elements的节点,此处会打印所有子节点
 # soup.find_all(class_='element')//由于class在python是一个关键字，所以需要加上下划线
-for link in bs.find_all(class_="art_tit"):
-    print(link.get_text())
-for link in bs.find_all(class_="article"):
-    print(link.get_text())
+for line in bs.find_all(class_="art_tit"):
+    print(line.get_text())
+for line in bs.find_all(class_="article"):
+    print(line.get_text())
